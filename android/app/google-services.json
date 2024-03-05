@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "190919565082",
+    "project_id": "telegram-chat-9ea25",
+    "storage_bucket": "telegram-chat-9ea25.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:190919565082:android:3abbd0c1072af99d3a56a3",
+        "android_client_info": {
+          "package_name": "com.telegramchatapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxi26Wz1PVSJIz1VGmRgXa8q66XU0OlrM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
