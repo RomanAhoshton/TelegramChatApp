@@ -1,22 +1,31 @@
 import {useState} from 'react';
 import auth from '@react-native-firebase/auth';
 import {Alert} from 'react-native';
+import {userFormValue} from '../types';
 
 export const useCreateUser = () => {
-  const [userValue, setUserValue] = useState({
+  const [userValue, setUserValue] = useState<userFormValue>({
     email: '',
     password: '',
+    name: '',
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const createUser = () => {
-    if (userValue.email && userValue.password !== '') {
+    setIsLoading(true);
+    if (userValue.email && userValue.password && userValue.name !== '') {
       auth()
         .createUserWithEmailAndPassword(userValue.email, userValue.password)
         .then(data => {
           if (data.user) {
+            data.user.updateProfile({
+              displayName: userValue.name,
+            });
             Alert.alert('', 'Your account has been created');
 
-            setUserValue({email: '', password: ''});
+            setUserValue({email: '', password: '', name: ''});
+            setIsLoading(false);
           }
         })
         .catch(error => {
@@ -27,10 +36,11 @@ export const useCreateUser = () => {
           if (error.code === 'auth/invalid-email') {
             Alert.alert('', 'That email address is invalid!');
           }
+          setIsLoading(false);
         });
     } else {
       Alert.alert('', 'The form is not fully completed');
     }
   };
-  return {userValue, setUserValue, createUser};
+  return {userValue, setUserValue, createUser, isLoading};
 };

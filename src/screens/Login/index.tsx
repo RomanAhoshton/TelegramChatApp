@@ -3,6 +3,7 @@ import React from 'react';
 import {
   Text,
   SafeAreaView,
+  ScrollView,
   View,
   Image,
   StyleSheet,
@@ -15,17 +16,17 @@ import {colors} from '../../assets/colors';
 
 import SignForm from '../../components/SignForm';
 import {useLogin} from '../../hooks/useLogin';
+import Mertics from '../../assets/helpers';
 
 const styles = StyleSheet.create({
   wrapper: {
     backgroundColor: colors.dark,
     flex: 1,
+    width: Mertics.width,
   },
 
   container: {
-    paddingLeft: 20,
-    paddingRight: 20,
-    marginTop: 75,
+    padding: 20,
   },
 
   logo: {width: 150, height: 150, alignSelf: 'center'},
@@ -60,7 +61,7 @@ export default () => {
 
   return (
     <SafeAreaView style={styles.wrapper}>
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.logoWrapper}>
           <Image source={icons.TDarkLogo} style={styles.logo} />
         </View>
@@ -77,7 +78,7 @@ export default () => {
           onPress={() => navigation.navigate('Register')}>
           <Text style={styles.text}> Back to Create Account</Text>
         </Pressable>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

@@ -15,6 +15,7 @@
 		954B78E1F1246C6FADDC9D78 /* Pods_TelegramChatApp_TelegramChatAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D642745EC309EFDDFBFF81A /* Pods_TelegramChatApp_TelegramChatAppTests.framework */; };
 		97364482645BD5DFD82319F3 /* Pods_TelegramChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1D5FAA4A5BF69F645B06B5 /* Pods_TelegramChatApp.framework */; };
 		CE35E72E2B961D5F0081268B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE35E72D2B961D5E0081268B /* GoogleService-Info.plist */; };
+		CE6959A62B98F3360063F24C /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = CE6959A52B98F3360063F24C /* fonts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		A06389F92CB101B97B176B46 /* Pods-TelegramChatApp-TelegramChatAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TelegramChatApp-TelegramChatAppTests.release.xcconfig"; path = "Target Support Files/Pods-TelegramChatApp-TelegramChatAppTests/Pods-TelegramChatApp-TelegramChatAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		C43ED529D05D1B22F86A47B3 /* Pods-TelegramChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TelegramChatApp.release.xcconfig"; path = "Target Support Files/Pods-TelegramChatApp/Pods-TelegramChatApp.release.xcconfig"; sourceTree = "<group>"; };
 		CE35E72D2B961D5E0081268B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE6959A52B98F3360063F24C /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				CE6959A52B98F3360063F24C /* fonts */,
 				CE35E72D2B961D5E0081268B /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* TelegramChatApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -248,6 +251,7 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				CE35E72E2B961D5F0081268B /* GoogleService-Info.plist in Resources */,
+				CE6959A62B98F3360063F24C /* fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,13 +608,17 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CFLAGS = "$(inherited)";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
+					" ",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -686,13 +694,17 @@
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_CFLAGS = "$(inherited)";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
+					" ",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

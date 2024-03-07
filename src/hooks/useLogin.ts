@@ -19,7 +19,14 @@ export const useLogin = () => {
         .signInWithEmailAndPassword(userValue.email, userValue.password)
         .then(data => {
           if (data.user) {
-            dispatch(setUser(data.user));
+            dispatch(
+              setUser({
+                name: data?.user.displayName,
+                email: data?.user.email,
+                photo: data?.user.photoURL,
+                id: data.user.uid,
+              }),
+            );
 
             setUserValue({email: '', password: ''});
           }

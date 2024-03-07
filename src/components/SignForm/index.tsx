@@ -1,6 +1,8 @@
 /* eslint-disable react/react-in-jsx-scope */
 import {View, StyleSheet, TextInput, Pressable, Text} from 'react-native';
 import {colors} from '../../assets/colors';
+import {useRoute} from '@react-navigation/native';
+import {userFormValue} from '../../types';
 
 const styles = StyleSheet.create({
   form: {},
@@ -31,25 +33,43 @@ const styles = StyleSheet.create({
   },
 });
 
-interface userValue {
-  email: string;
-  password: string;
-}
-
 interface Props {
-  userValue: userValue;
-  setUserValue: (arg: userValue) => void;
+  userValue: userFormValue;
+  setUserValue: (arg: userFormValue) => void;
   userAction: () => void;
   textButton: string;
 }
 
 export default ({userValue, setUserValue, userAction, textButton}: Props) => {
+  const route = useRoute();
+
   return (
     <View style={styles.form}>
+      {route.name === 'Register' ? (
+        <TextInput
+          style={[styles.input, {marginTop: 30}]}
+          onChangeText={text =>
+            setUserValue({
+              password: userValue.password,
+              email: userValue.email,
+              name: text,
+            })
+          }
+          value={userValue.name}
+          placeholder="Name"
+          placeholderTextColor={colors.white}
+          cursorColor={colors.violet}
+        />
+      ) : null}
+
       <TextInput
-        style={[styles.input, {marginTop: 50}]}
+        style={[styles.input, {marginTop: route.name === 'Register' ? 12 : 50}]}
         onChangeText={text =>
-          setUserValue({password: userValue.password, email: text})
+          setUserValue({
+            password: userValue.password,
+            name: userValue.name,
+            email: text,
+          })
         }
         value={userValue.email}
         placeholder="Email"
@@ -59,7 +79,11 @@ export default ({userValue, setUserValue, userAction, textButton}: Props) => {
       <TextInput
         style={styles.input}
         onChangeText={text =>
-          setUserValue({email: userValue.email, password: text})
+          setUserValue({
+            email: userValue.email,
+            password: text,
+            name: userValue.name,
+          })
         }
         value={userValue.password}
         placeholder="Password"

@@ -1,9 +1,19 @@
-import {View, Text} from 'react-native';
+import {Text, ScrollView, StyleSheet} from 'react-native';
+import Mertics from '../../assets/helpers';
+import {colors} from '../../assets/colors';
+
+const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+    backgroundColor: colors.black,
+    width: Mertics.width,
+  },
+});
 
 export default () => {
   return (
-    <View>
+    <ScrollView style={styles.wrapper}>
       <Text>Chats</Text>
-    </View>
+    </ScrollView>
   );
 };

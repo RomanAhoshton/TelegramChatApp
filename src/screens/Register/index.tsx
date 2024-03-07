@@ -7,25 +7,27 @@ import {
   Image,
   StyleSheet,
   Pressable,
+  ActivityIndicator,
+  ScrollView,
 } from 'react-native';
 import {RootStackNavigationProp} from '../../types';
-// import auth from '@react-native-firebase/auth';
+
 import {icons} from '../../assets';
 import {colors} from '../../assets/colors';
 
 import SignForm from '../../components/SignForm';
 import {useCreateUser} from '../../hooks/useCreateUser';
+import Mertics from '../../assets/helpers';
 
 const styles = StyleSheet.create({
   wrapper: {
     backgroundColor: colors.dark,
     flex: 1,
+    width: Mertics.width,
   },
 
   container: {
-    paddingLeft: 20,
-    paddingRight: 20,
-    marginTop: 75,
+    padding: 20,
   },
 
   logo: {width: 150, height: 150, alignSelf: 'center'},
@@ -43,27 +45,33 @@ const styles = StyleSheet.create({
     fontSize: 23,
     fontWeight: '700',
     textAlign: 'center',
-    marginTop: 30,
+    marginTop: 20,
   },
-  text: {color: colors.violet, fontSize: 22, fontWeight: '700'},
+  text: {
+    color: colors.violet,
+    fontSize: 22,
+    fontWeight: '700',
+    marginBottom: 20,
+  },
   toLogin: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginTop: 50,
+    marginTop: 15,
   },
 });
 
 export default () => {
   const navigation = useNavigation<RootStackNavigationProp>();
-  const {userValue, setUserValue, createUser} = useCreateUser();
+  const {userValue, setUserValue, createUser, isLoading} = useCreateUser();
 
   return (
     <SafeAreaView style={styles.wrapper}>
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.logoWrapper}>
           <Image source={icons.TDarkLogo} style={styles.logo} />
         </View>
         <Text style={styles.title}> Create account in Telegram</Text>
+        {isLoading && <ActivityIndicator size="large" color={colors.violet} />}
         <SignForm
           userValue={userValue}
           setUserValue={setUserValue}
@@ -76,7 +84,7 @@ export default () => {
           onPress={() => navigation.navigate('Login')}>
           <Text style={styles.text}> Already have account ? Log in</Text>
         </Pressable>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

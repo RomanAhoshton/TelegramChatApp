@@ -12,3 +12,16 @@ export type BottomTabs = {
   Chats: undefined;
   Profile: undefined;
 };
+
+export interface userFormValue {
+  email: string;
+  password: string;
+  name?: string;
+}
+
+export interface User {
+  name: string | null;
+  photo: string | null;
+  email: string | null;
+  id: string | null;
+}
