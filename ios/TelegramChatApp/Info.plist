@@ -59,12 +59,20 @@
 	<false/>
 	<key>UTImportedTypeDeclarations</key>
 	<array>
+		<dict>
+			<key>UTTypeIconFiles</key>
+			<array/>
+			<key>UTTypeReferenceURL</key>
+			<string>TelegramChatApp/fonts/Ionicons</string>
+			<key>UTTypeTagSpecification</key>
+			<dict/>
+		</dict>
 		<dict/>
 	</array>
-</dict>
-</plist>
-<key>UIAppFonts</key>
+	<key>UIAppFonts</key>
 <array>
   <string>fonts/Ionicons.ttf</string>
   <string>fonts/MaterialIcons.ttf</string>
 </array>
+</dict>
+</plist>

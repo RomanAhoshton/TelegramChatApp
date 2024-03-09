@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, Pressable, StyleSheet, Image} from 'react-native';
 import {useLogOut} from '../../hooks/useLogOut';
 import {colors} from '../../assets/colors';
@@ -71,26 +71,31 @@ const styles = StyleSheet.create({
 
 export default () => {
   const currentUser = auth().currentUser;
+  const [imagePath, setImagePath] = useState<string | null | undefined>(null);
 
   const {LogOut} = useLogOut();
-  const {selectImage} = useAvatar();
+  const {selectImage, imageUrl} = useAvatar();
+
+  useEffect(() => {
+    setImagePath(currentUser?.photoURL);
+  }, [currentUser?.photoURL, imageUrl]);
 
   return (
     <View style={styles.wrapper}>
       <View style={styles.container}>
-        {!currentUser?.photoURL ? (
+        {imagePath !== null ? (
+          <Image
+            source={{
+              uri: imagePath,
+            }}
+            style={styles.avatar}
+          />
+        ) : (
           <View style={[styles.avatar, {backgroundColor: colors.violet}]}>
             <Text style={styles.textLogo}>
               {currentUser?.displayName?.charAt(0)}
             </Text>
           </View>
-        ) : (
-          <Image
-            source={{
-              uri: currentUser?.photoURL,
-            }}
-            style={styles.avatar}
-          />
         )}
         <Pressable style={styles.button} onPress={selectImage}>
           <Text style={styles.textB}>Upload avatar</Text>

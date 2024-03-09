@@ -4,6 +4,7 @@ import {Users, Chats, Profile} from '../../screens';
 import {BottomTabs} from '../../types';
 import {Text} from 'react-native';
 import {colors} from '../../assets/colors';
+import Icon from 'react-native-ionicons';
 
 export default () => {
   const Tab = createBottomTabNavigator<BottomTabs>();
@@ -24,8 +25,10 @@ export default () => {
         name="Users"
         component={Users}
         options={{
+          // eslint-disable-next-line react/no-unstable-nested-components
           tabBarLabel: ({focused}) => (
             <Text
+              // eslint-disable-next-line react-native/no-inline-styles
               style={{
                 color: focused ? colors.violet : colors.lightGrey,
                 textTransform: 'uppercase',
@@ -47,6 +50,10 @@ export default () => {
         name="Chats"
         component={Chats}
         options={{
+          // eslint-disable-next-line react/no-unstable-nested-components
+          tabBarIcon: ({}) => (
+            <Icon name="person-circle-outline" size={30} color="red" />
+          ),
           tabBarLabel: ({focused}) => (
             <Text
               style={{
