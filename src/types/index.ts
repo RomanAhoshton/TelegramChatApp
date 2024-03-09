@@ -20,8 +20,8 @@ export interface userFormValue {
 }
 
 export interface User {
-  name: string | null;
-  photo: string | null;
-  email: string | null;
-  id: string | null;
+  name?: string | null;
+  photo?: string | null;
+  email?: string | null;
+  id?: string | null;
 }

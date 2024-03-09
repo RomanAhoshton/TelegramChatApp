@@ -1,7 +1,9 @@
-import {ScrollView, StyleSheet, Text} from 'react-native';
+import {ScrollView, StyleSheet, FlatList} from 'react-native';
 import {useGetAllUsers} from '../../hooks/useGetAllUsers';
 import {colors} from '../../assets/colors';
 import Mertics from '../../assets/helpers';
+import React from 'react';
+import User from '../../components/User';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -12,11 +14,15 @@ const styles = StyleSheet.create({
 });
 
 export default () => {
-  const {getUsers} = useGetAllUsers();
+  const {users} = useGetAllUsers();
 
   return (
     <ScrollView style={styles.wrapper}>
-      <Text onPress={getUsers}>Users</Text>
+      <FlatList
+        data={users}
+        renderItem={({item}) => <User item={item} />}
+        keyExtractor={item => item.id ?? ''}
+      />
     </ScrollView>
   );
 };

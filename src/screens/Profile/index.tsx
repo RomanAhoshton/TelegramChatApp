@@ -14,14 +14,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   avatar: {
-    width: 100,
-    borderRadius: 50,
+    width: 150,
+    borderRadius: 75,
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
     alignSelf: 'center',
-    height: 100,
-    marginBottom: 30,
+    height: 150,
+    marginBottom: 10,
   },
 
   container: {
@@ -62,10 +62,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 30,
   },
+
   textB: {
     color: colors.white,
     fontSize: 22,
     fontWeight: '700',
+  },
+
+  upload: {
+    fontSize: 24,
+    fontWeight: '500',
+    color: colors.violet,
   },
 });
 
@@ -97,8 +104,9 @@ export default () => {
             </Text>
           </View>
         )}
-        <Pressable style={styles.button} onPress={selectImage}>
-          <Text style={styles.textB}>Upload avatar</Text>
+
+        <Pressable onPress={selectImage} style={{marginTop: 20}}>
+          <Text style={styles.upload}>Upload avatar</Text>
         </Pressable>
 
         {currentUser?.displayName && (

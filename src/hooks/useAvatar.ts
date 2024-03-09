@@ -2,6 +2,7 @@ import {useState} from 'react';
 import {launchImageLibrary} from 'react-native-image-picker';
 import auth from '@react-native-firebase/auth';
 import {Alert} from 'react-native';
+import firestore from '@react-native-firebase/firestore';
 
 export const useAvatar = () => {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
@@ -30,6 +31,11 @@ export const useAvatar = () => {
         await user.updateProfile({
           photoURL: image,
         });
+
+        await firestore().collection('users').doc(user?.uid).update({
+          photo: image,
+        });
+
         setImageUrl(image);
       } catch (error) {
         Alert.alert('', error as string);
