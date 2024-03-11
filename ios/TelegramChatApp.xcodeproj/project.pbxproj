@@ -9,13 +9,9 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* TelegramChatAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TelegramChatAppTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
-		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		954B78E1F1246C6FADDC9D78 /* Pods_TelegramChatApp_TelegramChatAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D642745EC309EFDDFBFF81A /* Pods_TelegramChatApp_TelegramChatAppTests.framework */; };
 		97364482645BD5DFD82319F3 /* Pods_TelegramChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1D5FAA4A5BF69F645B06B5 /* Pods_TelegramChatApp.framework */; };
-		CE35E72E2B961D5F0081268B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE35E72D2B961D5E0081268B /* GoogleService-Info.plist */; };
-		CE6959A62B98F3360063F24C /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = CE6959A52B98F3360063F24C /* fonts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +42,25 @@
 		A06389F92CB101B97B176B46 /* Pods-TelegramChatApp-TelegramChatAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TelegramChatApp-TelegramChatAppTests.release.xcconfig"; path = "Target Support Files/Pods-TelegramChatApp-TelegramChatAppTests/Pods-TelegramChatApp-TelegramChatAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		C43ED529D05D1B22F86A47B3 /* Pods-TelegramChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TelegramChatApp.release.xcconfig"; path = "Target Support Files/Pods-TelegramChatApp/Pods-TelegramChatApp.release.xcconfig"; sourceTree = "<group>"; };
 		CE35E72D2B961D5E0081268B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CE6959A52B98F3360063F24C /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		CE6831542B9F70AA00C37F3A /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
+		CE6831552B9F70AA00C37F3A /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
+		CE6831562B9F70AA00C37F3A /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
+		CE6831572B9F70AA00C37F3A /* FontAwesome6_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Regular.ttf; sourceTree = "<group>"; };
+		CE6831582B9F70AA00C37F3A /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
+		CE6831592B9F70AA00C37F3A /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
+		CE68315A2B9F70AA00C37F3A /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
+		CE68315B2B9F70AA00C37F3A /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
+		CE68315C2B9F70AA00C37F3A /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
+		CE68315D2B9F70AA00C37F3A /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
+		CE68315E2B9F70AA00C37F3A /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
+		CE68315F2B9F70AA00C37F3A /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
+		CE6831602B9F70AA00C37F3A /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		CE6831612B9F70AA00C37F3A /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
+		CE6831622B9F70AA00C37F3A /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
+		CE6831632B9F70AA00C37F3A /* FontAwesome6_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Solid.ttf; sourceTree = "<group>"; };
+		CE6831642B9F70AA00C37F3A /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
+		CE6831652B9F70AA00C37F3A /* FontAwesome6_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Brands.ttf; sourceTree = "<group>"; };
+		CE6831662B9F70AA00C37F3A /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -120,7 +134,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				CE6959A52B98F3360063F24C /* fonts */,
+				CE6831532B9F70AA00C37F3A /* Fonts */,
 				CE35E72D2B961D5E0081268B /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* TelegramChatApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -152,6 +166,32 @@
 				A06389F92CB101B97B176B46 /* Pods-TelegramChatApp-TelegramChatAppTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CE6831532B9F70AA00C37F3A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CE6831542B9F70AA00C37F3A /* Fontisto.ttf */,
+				CE6831552B9F70AA00C37F3A /* Octicons.ttf */,
+				CE6831562B9F70AA00C37F3A /* Feather.ttf */,
+				CE6831572B9F70AA00C37F3A /* FontAwesome6_Regular.ttf */,
+				CE6831582B9F70AA00C37F3A /* Entypo.ttf */,
+				CE6831592B9F70AA00C37F3A /* FontAwesome5_Brands.ttf */,
+				CE68315A2B9F70AA00C37F3A /* MaterialCommunityIcons.ttf */,
+				CE68315B2B9F70AA00C37F3A /* AntDesign.ttf */,
+				CE68315C2B9F70AA00C37F3A /* Foundation.ttf */,
+				CE68315D2B9F70AA00C37F3A /* Ionicons.ttf */,
+				CE68315E2B9F70AA00C37F3A /* FontAwesome5_Solid.ttf */,
+				CE68315F2B9F70AA00C37F3A /* FontAwesome5_Regular.ttf */,
+				CE6831602B9F70AA00C37F3A /* FontAwesome.ttf */,
+				CE6831612B9F70AA00C37F3A /* Zocial.ttf */,
+				CE6831622B9F70AA00C37F3A /* EvilIcons.ttf */,
+				CE6831632B9F70AA00C37F3A /* FontAwesome6_Solid.ttf */,
+				CE6831642B9F70AA00C37F3A /* SimpleLineIcons.ttf */,
+				CE6831652B9F70AA00C37F3A /* FontAwesome6_Brands.ttf */,
+				CE6831662B9F70AA00C37F3A /* MaterialIcons.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,10 +288,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				CE35E72E2B961D5F0081268B /* GoogleService-Info.plist in Resources */,
-				CE6959A62B98F3360063F24C /* fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

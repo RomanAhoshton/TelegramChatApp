@@ -90,7 +90,7 @@ export default () => {
   return (
     <View style={styles.wrapper}>
       <View style={styles.container}>
-        {imagePath !== null ? (
+        {imagePath ? (
           <Image
             source={{
               uri: imagePath,

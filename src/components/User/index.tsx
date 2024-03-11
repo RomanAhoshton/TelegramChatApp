@@ -39,10 +39,11 @@ const styles = StyleSheet.create({
 });
 
 export default ({item}: Props) => {
+  console.log(item.photo);
   return (
     <>
       <View style={styles.userContainer}>
-        {item.photo === null ? (
+        {!item.photo ? (
           <View style={[styles.avatar, {backgroundColor: colors.violet}]}>
             <Text style={styles.textLogo}>{item?.name?.charAt(0)}</Text>
           </View>

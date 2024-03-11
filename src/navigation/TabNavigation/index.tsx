@@ -4,14 +4,14 @@ import {Users, Chats, Profile} from '../../screens';
 import {BottomTabs} from '../../types';
 import {Text} from 'react-native';
 import {colors} from '../../assets/colors';
-import Icon from 'react-native-ionicons';
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 
 export default () => {
   const Tab = createBottomTabNavigator<BottomTabs>();
 
   return (
     <Tab.Navigator
-      initialRouteName="Users"
+      initialRouteName="Profile"
       screenOptions={{
         tabBarStyle: {
           backgroundColor: colors.dark,
@@ -37,6 +37,14 @@ export default () => {
               Users
             </Text>
           ),
+          // eslint-disable-next-line react/no-unstable-nested-components
+          tabBarIcon: ({focused}) => (
+            <FontAwesomeIcon
+              name="users"
+              size={25}
+              color={focused ? colors.violet : colors.lightGrey}
+            />
+          ),
           headerStyle: {
             backgroundColor: colors.dark,
           },
@@ -51,11 +59,17 @@ export default () => {
         component={Chats}
         options={{
           // eslint-disable-next-line react/no-unstable-nested-components
-          tabBarIcon: ({}) => (
-            <Icon name="person-circle-outline" size={30} color="red" />
+          tabBarIcon: ({focused}) => (
+            <FontAwesomeIcon
+              name="wechat"
+              size={25}
+              color={focused ? colors.violet : colors.lightGrey}
+            />
           ),
+          // eslint-disable-next-line react/no-unstable-nested-components
           tabBarLabel: ({focused}) => (
             <Text
+              // eslint-disable-next-line react-native/no-inline-styles
               style={{
                 color: focused ? colors.violet : colors.lightGrey,
                 textTransform: 'uppercase',
@@ -77,8 +91,10 @@ export default () => {
         name="Profile"
         component={Profile}
         options={{
+          // eslint-disable-next-line react/no-unstable-nested-components
           tabBarLabel: ({focused}) => (
             <Text
+              // eslint-disable-next-line react-native/no-inline-styles
               style={{
                 color: focused ? colors.violet : colors.lightGrey,
                 textTransform: 'uppercase',
@@ -86,6 +102,14 @@ export default () => {
               }}>
               Profile
             </Text>
+          ),
+          // eslint-disable-next-line react/no-unstable-nested-components
+          tabBarIcon: ({focused}) => (
+            <FontAwesomeIcon
+              name="user-circle"
+              size={25}
+              color={focused ? colors.violet : colors.lightGrey}
+            />
           ),
           headerShown: false,
         }}
