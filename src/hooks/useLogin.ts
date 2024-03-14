@@ -4,8 +4,11 @@ import {Alert} from 'react-native';
 import {setUser} from '../redux/slices/userSlice';
 import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../redux/store';
+import {useNavigation} from '@react-navigation/native';
+import {ScreenNames} from '../navigation/StackNavigation';
 
 export const useLogin = () => {
+  const navigation = useNavigation();
   const [userValue, setUserValue] = useState({
     email: '',
     password: '',
@@ -27,7 +30,7 @@ export const useLogin = () => {
                 id: data.user.uid,
               }),
             );
-
+            navigation.navigate(ScreenNames.TabNavigationScreen as never);
             setUserValue({email: '', password: ''});
           }
         })

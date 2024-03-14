@@ -5,13 +5,14 @@ import {BottomTabs} from '../../types';
 import {Text} from 'react-native';
 import {colors} from '../../assets/colors';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
+import {ScreenNames} from '../StackNavigation';
 
 export default () => {
   const Tab = createBottomTabNavigator<BottomTabs>();
 
   return (
     <Tab.Navigator
-      initialRouteName="Profile"
+      initialRouteName={ScreenNames.ProfileScreen}
       screenOptions={{
         tabBarStyle: {
           backgroundColor: colors.dark,
@@ -22,7 +23,7 @@ export default () => {
         tabBarInactiveTintColor: colors.lightGrey,
       }}>
       <Tab.Screen
-        name="Users"
+        name={ScreenNames.UsersScreen}
         component={Users}
         options={{
           // eslint-disable-next-line react/no-unstable-nested-components
@@ -55,7 +56,7 @@ export default () => {
         }}
       />
       <Tab.Screen
-        name="Chats"
+        name={ScreenNames.ChatsScreen}
         component={Chats}
         options={{
           // eslint-disable-next-line react/no-unstable-nested-components
@@ -88,7 +89,7 @@ export default () => {
         }}
       />
       <Tab.Screen
-        name="Profile"
+        name={ScreenNames.ProfileScreen}
         component={Profile}
         options={{
           // eslint-disable-next-line react/no-unstable-nested-components

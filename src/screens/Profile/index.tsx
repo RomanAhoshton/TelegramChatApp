@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, Pressable, StyleSheet, Image} from 'react-native';
+import {View, Text, Pressable, StyleSheet, Image, Platform} from 'react-native';
 import {useLogOut} from '../../hooks/useLogOut';
 import {colors} from '../../assets/colors';
 import auth from '@react-native-firebase/auth';
@@ -90,7 +90,7 @@ export default () => {
   return (
     <View style={styles.wrapper}>
       <View style={styles.container}>
-        {imagePath ? (
+        {Platform.OS === 'ios' && imagePath ? (
           <Image
             source={{
               uri: imagePath,

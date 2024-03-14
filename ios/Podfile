@@ -3,7 +3,7 @@ use_modular_headers!
 use_frameworks! :linkage => :static
 $RNFirebaseAsStaticFramework = true
 
-pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec', :modular_headers => false
+
 
 require Pod::Executable.execute_command('node', ['-p',
   'require.resolve(

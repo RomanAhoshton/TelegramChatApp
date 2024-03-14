@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, Platform} from 'react-native';
 import {User} from '../../types';
 import {colors} from '../../assets/colors';
 
@@ -39,21 +39,20 @@ const styles = StyleSheet.create({
 });
 
 export default ({item}: Props) => {
-  console.log(item.photo);
   return (
     <>
       <View style={styles.userContainer}>
-        {!item.photo ? (
-          <View style={[styles.avatar, {backgroundColor: colors.violet}]}>
-            <Text style={styles.textLogo}>{item?.name?.charAt(0)}</Text>
-          </View>
-        ) : (
+        {item.photo && Platform.OS === 'ios' ? (
           <Image
             source={{
               uri: item.photo,
             }}
             style={styles.avatar}
           />
+        ) : (
+          <View style={[styles.avatar, {backgroundColor: colors.violet}]}>
+            <Text style={styles.textLogo}>{item?.name?.charAt(0)}</Text>
+          </View>
         )}
 
         <Text style={styles.name}>{item.name}</Text>

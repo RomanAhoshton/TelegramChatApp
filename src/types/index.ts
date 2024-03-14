@@ -5,6 +5,10 @@ export type RootStackNavigationProp = StackNavigationProp<RootStackParamList>;
 export type RootStackParamList = {
   Register: undefined;
   Login: undefined;
+  TabNavigation: undefined;
+  Users: undefined;
+  Chats: undefined;
+  Profile: undefined;
 };
 
 export type BottomTabs = {
