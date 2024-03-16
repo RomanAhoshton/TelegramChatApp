@@ -1,6 +1,6 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Login, Register} from '../../screens';
+import {Login, Register, Chat} from '../../screens';
 import {RootStackParamList} from '../../types';
 import TabNavigation from '../TabNavigation';
 import auth from '@react-native-firebase/auth';
@@ -36,6 +36,7 @@ export default () => {
         component={Login}
         options={{headerShown: false}}
       />
+      <Stack.Screen name={ScreenNames.ChatScreen} component={Chat} />
       <Stack.Screen
         name={ScreenNames.TabNavigationScreen}
         component={TabNavigation}

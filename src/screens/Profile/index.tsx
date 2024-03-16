@@ -5,6 +5,7 @@ import {colors} from '../../assets/colors';
 import auth from '@react-native-firebase/auth';
 import Mertics from '../../assets/helpers';
 import {useAvatar} from '../../hooks/useAvatar';
+import {useRandomColor} from '../../hooks/useRandomColor';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -87,6 +88,8 @@ export default () => {
     setImagePath(currentUser?.photoURL);
   }, [currentUser?.photoURL, imageUrl]);
 
+  const {randomColor} = useRandomColor();
+
   return (
     <View style={styles.wrapper}>
       <View style={styles.container}>
@@ -98,7 +101,7 @@ export default () => {
             style={styles.avatar}
           />
         ) : (
-          <View style={[styles.avatar, {backgroundColor: colors.violet}]}>
+          <View style={[styles.avatar, {backgroundColor: randomColor}]}>
             <Text style={styles.textLogo}>
               {currentUser?.displayName?.charAt(0)}
             </Text>

@@ -1,7 +1,10 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, Platform} from 'react-native';
-import {User} from '../../types';
+import {View, Text, StyleSheet, Image, Platform, Pressable} from 'react-native';
+import {RootStackNavigationProp, User} from '../../types';
 import {colors} from '../../assets/colors';
+import {useRandomColor} from '../../hooks/useRandomColor';
+import {useNavigation} from '@react-navigation/native';
+import {ScreenNames} from '../../navigation/StackNavigation';
 
 interface Props {
   item: User;
@@ -39,8 +42,11 @@ const styles = StyleSheet.create({
 });
 
 export default ({item}: Props) => {
+  const {randomColor} = useRandomColor();
+  const navigation = useNavigation<RootStackNavigationProp>();
   return (
-    <>
+    <Pressable
+      onPress={() => navigation.navigate(ScreenNames.ChatScreen, {item})}>
       <View style={styles.userContainer}>
         {item.photo && Platform.OS === 'ios' ? (
           <Image
@@ -50,13 +56,13 @@ export default ({item}: Props) => {
             style={styles.avatar}
           />
         ) : (
-          <View style={[styles.avatar, {backgroundColor: colors.violet}]}>
+          <View style={[styles.avatar, {backgroundColor: randomColor}]}>
             <Text style={styles.textLogo}>{item?.name?.charAt(0)}</Text>
           </View>
         )}
 
         <Text style={styles.name}>{item.name}</Text>
       </View>
-    </>
+    </Pressable>
   );
 };

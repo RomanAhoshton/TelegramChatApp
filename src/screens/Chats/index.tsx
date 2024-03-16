@@ -1,6 +1,9 @@
-import {Text, ScrollView, StyleSheet} from 'react-native';
-import Mertics from '../../assets/helpers';
+import {View, StyleSheet, FlatList} from 'react-native';
 import {colors} from '../../assets/colors';
+import Mertics from '../../assets/helpers';
+import React from 'react';
+import User from '../../components/User';
+import {useGetChats} from '../../hooks/useGetChats';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -11,9 +14,15 @@ const styles = StyleSheet.create({
 });
 
 export default () => {
+  const {chats} = useGetChats();
+
   return (
-    <ScrollView style={styles.wrapper}>
-      <Text>Chats</Text>
-    </ScrollView>
+    <View style={styles.wrapper}>
+      <FlatList
+        data={chats}
+        renderItem={({item}) => <User item={item} />}
+        keyExtractor={item => item.id ?? ''}
+      />
+    </View>
   );
 };

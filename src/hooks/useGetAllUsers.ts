@@ -4,14 +4,16 @@ import {useEffect, useState} from 'react';
 import {User as Users} from '../types';
 import {Alert} from 'react-native';
 import auth from '@react-native-firebase/auth';
+import {useCreateUser} from './useCreateUser';
 
 export const useGetAllUsers = () => {
   const [users, setUsers] = useState<Users[] | null>(null);
+  const {createUser} = useCreateUser();
   const currentUser = auth().currentUser;
 
   useEffect(() => {
     getUsers();
-  }, []);
+  }, [createUser]);
 
   const getUsers = async () => {
     try {
